@@ -1,0 +1,114 @@
+--Create Database
+Create Database MarketExpress,
+
+--use Database 
+use MarketExpress
+
+
+-- Create the Users Table
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Gender VARCHAR(50), -- Gender can be NULL
+    Contact VARCHAR(255) NOT NULL,
+    UserRoles VARCHAR(255) NOT NULL
+);
+
+-- Create the UserAddresses Table
+CREATE TABLE UserAddresses (
+    AddressessID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    StreetAddress VARCHAR(255) NOT NULL,
+    City VARCHAR(255) NOT NULL,
+    State VARCHAR(255) NOT NULL,
+    PostalCode VARCHAR(20), -- PostalCode can be NULL
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- Create the Products Table with Price Constraint
+CREATE TABLE Products (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    AddedByUserID INT,
+    Name VARCHAR(255) NOT NULL,
+    Description TEXT,
+    ProductCategory VARCHAR(255) NOT NULL,
+    Price DECIMAL(10, 2) CHECK (Price > 0 AND Price < 1000000), -- Adding the CHECK constraint
+    Quantity INT NOT NULL,
+    LikesCount INT, -- LikesCount can be NULL
+    ReviewsCount INT, -- ReviewsCount can be NULL
+    Available BIT,
+    FOREIGN KEY (AddedByUserID) REFERENCES Users(UserID)
+);
+
+-- Create the ProductReviews Table
+CREATE TABLE ProductReviews (
+    ReviewID INT PRIMARY KEY,
+    ProductID INT,
+    ReviewByUserID INT,
+    ReviewDescription TEXT,
+    DateOfReview DATETIME,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    FOREIGN KEY (ReviewByUserID) REFERENCES Users(UserID)
+);
+
+-- Create the Carts Table
+CREATE TABLE Carts (
+    CartID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    Date DATETIME NOT NULL,
+    Ended BIT, -- Ended can be NULL
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- Create the CartItems Table
+CREATE TABLE CartItems (
+    CartItemID INT IDENTITY(1,1) PRIMARY KEY,
+    CartID INT,
+    ProductID INT,
+    FOREIGN KEY (CartID) REFERENCES Carts(CartID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Create the Orders Table
+CREATE TABLE Orders (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    AddressID INT,
+    Date DATETIME NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (AddressID) REFERENCES UserAddresses(AddressessID)
+);
+
+-- Create the OrderItems Table
+CREATE TABLE OrderItems (
+    OrderItemID INT PRIMARY KEY,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Create the Communication Table
+CREATE TABLE Communication (
+    CommunicationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserOneID INT,
+    UserTwoID INT,
+    Message TEXT, -- Message can be NULL
+    Date DATETIME NOT NULL,
+    FOREIGN KEY (UserOneID) REFERENCES Users(UserID),
+    FOREIGN KEY (UserTwoID) REFERENCES Users(UserID)
+);
+
+-- Create the Billing Table with Positive Amount Constraints
+CREATE TABLE Billing (
+    BillingID INT IDENTITY(1,1) PRIMARY KEY,
+    CartID INT,
+    ActualBillPrice DECIMAL(10, 2) CHECK (ActualBillPrice > 0), -- Adding the CHECK constraint
+    ReturnedAmount DECIMAL(10, 2) CHECK (ReturnedAmount > 0), -- Adding the CHECK constraint
+    PriceReceived DECIMAL(10, 2) CHECK (PriceReceived > 0), -- Adding the CHECK constraint
+    FOREIGN KEY (CartID) REFERENCES Carts(CartID)
+);
