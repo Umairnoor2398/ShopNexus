@@ -121,8 +121,17 @@
   <data name="icons8-back-arrow-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\icons8-back-arrow-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-checked-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-checked-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-image.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-cart-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-cart-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-bell.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +148,29 @@
   <data name="vector-horizontal-banner-concept-learning-600w-689761090" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vector-horizontal-banner-concept-learning-600w-689761090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-stars-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-stars-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-bell-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\icons8-bell-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-account-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\icons8-account-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-search-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-search-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-checked-checkbox-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-checked-checkbox-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-heart-10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-heart-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="output-onlinegiftools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinegiftools.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-no-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-no-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-back-arrow-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\icons8-back-arrow-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,7 +187,7 @@
   <data name="icons8-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\icons8-search.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-search-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\icons8-search-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-no-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\icons8-no-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

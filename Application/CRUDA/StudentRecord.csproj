@@ -395,6 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\ProductViewSeller.cs" />
     <Compile Include="Classes\user.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Form1.cs">
@@ -440,11 +441,23 @@
     <Compile Include="UCs\loginUC.Designer.cs">
       <DependentUpon>loginUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCs\ViewProductViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\ViewProductViewer.Designer.cs">
+      <DependentUpon>ViewProductViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCs\SignupUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCs\SignupUC.Designer.cs">
       <DependentUpon>SignupUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\ViewProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\ViewProducts.Designer.cs">
+      <DependentUpon>ViewProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="UCs\UserDataUC.cs">
       <SubType>UserControl</SubType>
@@ -482,8 +495,14 @@
     <EmbeddedResource Include="UCs\loginUC.resx">
       <DependentUpon>loginUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCs\ViewProductViewer.resx">
+      <DependentUpon>ViewProductViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCs\SignupUC.resx">
       <DependentUpon>SignupUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\ViewProducts.resx">
+      <DependentUpon>ViewProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\UserDataUC.resx">
       <DependentUpon>UserDataUC.cs</DependentUpon>
@@ -549,6 +568,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\icons8-search-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-heart-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-stars-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-cart-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-checked-checkbox-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-no-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-checked-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-no-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

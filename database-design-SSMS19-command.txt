@@ -112,3 +112,11 @@ CREATE TABLE Billing (
     PriceReceived DECIMAL(10, 2) CHECK (PriceReceived > 0), -- Adding the CHECK constraint
     FOREIGN KEY (CartID) REFERENCES Carts(CartID)
 );
+
+
+CREATE TABLE ProductsImg (
+  ImgID INT IDENTITY(1,1) PRIMARY KEY,
+  Product_Img VARCHAR(MAX),
+  ProductID INT,
+   FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
+  );

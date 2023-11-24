@@ -55,10 +55,6 @@ namespace CRUDA.UCs
             }
             reader.Close();
             cmd2.ExecuteNonQuery();
-        
-
-
-           
 
 
         }
@@ -100,7 +96,52 @@ namespace CRUDA.UCs
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+         
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
             this.Hide();
+        }
+
+        private void lblRecordSignal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gbx_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

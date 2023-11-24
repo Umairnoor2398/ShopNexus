@@ -203,7 +203,7 @@ namespace CRUDA
         {
             if (u.UserRole == "")// viewer
             {
-
+                loadc(new ViewProductViewer(u));
             }
             else if (u.UserRole == "Admin")
             {
@@ -327,7 +327,9 @@ namespace CRUDA
             this.Close();
         }
 
-        private void op1_Click(object sender, EventArgs e)
+
+
+        private void op1_Click_1(object sender, EventArgs e)
         {
             if (u.UserRole == "")// viewer
             {
@@ -345,7 +347,7 @@ namespace CRUDA
             }
         }
 
-        private void op4_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
         }

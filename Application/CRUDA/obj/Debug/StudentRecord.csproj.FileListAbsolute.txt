@@ -323,3 +323,5 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\Bunifu.UI.WinFo
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.UserDataUC.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.exe.licenses
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewProductViewer.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewProducts.resources

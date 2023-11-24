@@ -18,6 +18,11 @@ namespace CRUDA.UCs
         User U;
         bool checkUpdate;
         Product p = new Product();
+        string imglocation= string.Empty;
+        bool checkimg=false;
+        bool addproduct = false;
+
+        bool check_products_img_count = false;
 
         public AddProduct_UC(User u, bool checkUpdate)
         {
@@ -76,7 +81,8 @@ namespace CRUDA.UCs
                     MessageBox.Show("Product Successfully Added");
                     con.Close();
                     checkUpdate = false;
-
+                    checkimg = false;
+                    imglocation = string.Empty;
                 }
                 catch (Exception exp) { }
             }
@@ -104,6 +110,9 @@ namespace CRUDA.UCs
                     con2.Close();
 
                     checkUpdate = false;
+
+
+
                 }
                 catch (Exception exp) { }
             }
@@ -175,10 +184,20 @@ namespace CRUDA.UCs
             if (checkUpdate == true)
             {
                 btnAddProduct.Text = "Update";
+                pictureBox1.Visible = false;
+                productimg.Visible = false;
             }
             else
             {
                 btnAddProduct.Text = "Add";
+                pictureBox1.Visible = true;
+                productimg.Visible = true;
+            }
+
+            if (p.ProductID != null ) {
+
+                addproduct = true;
+                check();
             }
         }
 
@@ -202,6 +221,110 @@ namespace CRUDA.UCs
         }
 
         private void AddProduct_UC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void check() {
+
+            try
+            {
+                var con4 = Configuration.getInstance().getConnection();
+                SqlCommand cmd4 = new SqlCommand($"  select count(*) FROM ProductsImg WHERE ProductID = '{p.ProductID}' ", con4);
+                int X = 0;
+                SqlDataReader reader = cmd4.ExecuteReader();
+                while (reader.Read())
+                {
+                    X = (reader.GetInt32(0));
+                }
+                reader.Close();
+                if (X == 1)
+                {
+
+                    check_products_img_count = true;
+                }
+                else {
+
+                    check_products_img_count = false;
+                }
+
+                // X=cmd.ExecuteReader().GetString(0);
+                cmd4.ExecuteNonQuery();
+                
+            }
+            catch (Exception exp) { }
+
+
+        }
+
+
+        private void productimg_Click(object sender, EventArgs e)
+        {
+            check();
+            MessageBox.Show("To Add Image first add the product and then select the product from the list and then upload the image of the product");
+            if (addproduct && check_products_img_count)
+            {
+                MessageBox.Show("You have Selected Product of Product ID = "+p.ProductID.ToString());
+                try
+                {
+                    OpenFileDialog dialog = new OpenFileDialog();
+                    dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        imglocation = dialog.FileName.ToString();
+                        pictureBox1.ImageLocation = imglocation;
+                    }
+                }
+                catch (Exception ex) { }
+
+                if (imglocation != string.Empty)
+                {
+                    checkimg = true;
+                }
+                if (checkimg) {
+
+                    try
+                    {
+                        var con3 = Configuration.getInstance().getConnection();
+                        con3.Open();
+                        SqlCommand cmd3 = new SqlCommand("Insert into ProductsImg values (@Product_Img,@ProductID)", con3);
+                        cmd3.Parameters.AddWithValue("@ProductID", p.ProductID);
+                        cmd3.Parameters.AddWithValue("@Product_Img", imglocation);
+                        cmd3.ExecuteNonQuery();
+                        con3.Close();
+                            
+                        MessageBox.Show("Product Img  Successfully Added");
+                        
+
+                    }
+                    catch (Exception exp) { }
+
+                }
+
+
+
+
+
+
+
+            }
+            else {
+
+                MessageBox.Show("First Add the Product and then Select the product To upload / insert the image");
+
+            }
+
+
+
+
+
+
+
+
+
+        }
+
+        private void txtQuantity_ValueChanged(object sender, EventArgs e)
         {
 
         }

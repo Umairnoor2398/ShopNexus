@@ -153,6 +153,76 @@ namespace CRUDA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cart_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cart-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-checked-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_checkbox_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-checked-checkbox-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_10 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-heart-10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_image {
+            get {
+                object obj = ResourceManager.GetObject("icons8-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-no-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-no-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_open_door_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-open-door-20", resourceCulture);
@@ -186,6 +256,16 @@ namespace CRUDA.Properties {
         internal static System.Drawing.Bitmap icons8_search_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_stars_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-stars-20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
