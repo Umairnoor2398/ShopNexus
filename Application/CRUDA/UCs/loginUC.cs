@@ -141,21 +141,27 @@ namespace CRUDA.UCs
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
-        {
-            
-            var con = Configuration.getInstance().getConnection();
-            
-            SqlCommand cmd = new SqlCommand($"SELECT MAX(1) FROM USERS WHERE Email = @Email AND Password = @Password;", con);
-            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@Password", txtPasswoed.Text);
-            int X = 0;
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+        {int X= 0;
+            try
             {
-                X = (reader.GetInt32(0));
+                var con = Configuration.getInstance().getConnection();
+
+                SqlCommand cmd = new SqlCommand($"SELECT 1 FROM USERS WHERE Email = @Email AND Password = @Password;", con);
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@Password", txtPasswoed.Text);
+               
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetInt32(0)!=null) {
+                        X = (reader.GetInt32(0));
+                    }
+                    
+                }
+                reader.Close();
+                cmd.ExecuteNonQuery();
             }
-            reader.Close();
-            cmd.ExecuteNonQuery();
+            catch (Exception ex) { }
             
             if (X == 1)
             {

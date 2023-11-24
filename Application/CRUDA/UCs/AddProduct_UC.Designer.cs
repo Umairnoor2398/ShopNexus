@@ -438,6 +438,7 @@
             this.Controls.Add(this.gbx);
             this.Name = "AddProduct_UC";
             this.Size = new System.Drawing.Size(1144, 424);
+            this.Load += new System.EventHandler(this.AddProduct_UC_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).EndInit();

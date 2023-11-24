@@ -80,32 +80,7 @@ namespace CRUDA.UCs
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully Added");
             }
-            // else
-            // {
-            //var con = Configuration.getInstance().getConnection();
-            //SqlCommand cmd = new SqlCommand("Update Student Set RegistrationNumber = @RegisterationNo, FirstName = @FirstName, LastName = @LastName, Contact = @Contact, Email= @Email WHERE Id = @ID", con);
-            //cmd.Parameters.AddWithValue("@FirstName", (Firsttxtbx.Text));
-            //cmd.Parameters.AddWithValue("@LastName", txtLASTName.Text);
-            //cmd.Parameters.AddWithValue("@RegisterationNo", txtbxRrgisteration.Text);
-            //cmd.Parameters.AddWithValue("@Email", txtbxEmailAddress.Text);
-            //cmd.Parameters.AddWithValue("@Contact", txtbxContactNumber.Text);
 
-
-            //int id_check = 0;
-            //if (cmbxStatus.Text == "Active")
-            //{
-            //    id_check = 5;
-            //}
-            //else
-            //{
-            //    id_check = 6;
-            //}
-            //cmd.Parameters.AddWithValue("@Status", id_check);
-            //cmd.Parameters.AddWithValue("@ID", id);
-            //cmd.ExecuteNonQuery();
-            //MessageBox.Show("Successfully updated");
-
-            //  }
             if (y == 1) { MessageBox.Show("Already exist"); }
             }
             else

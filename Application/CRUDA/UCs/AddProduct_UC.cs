@@ -49,50 +49,65 @@ namespace CRUDA.UCs
         private void refresh()
         {
             dataGridView1.Controls.Clear();
+            dataGridView1.Columns.Clear();
+
 
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+         
+                if (checkUpdate == false)
+                {
+                try
+                {
+                    var con = Configuration.getInstance().getConnection();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into Products values (@AddedByUserID,@Name,@Description,@ProductCategory,@Price,@Quantity,@LikesCount,@ReviewsCount,@Available)", con);
+                    cmd.Parameters.AddWithValue("@AddedByUserID", (U.UserID));
+                    cmd.Parameters.AddWithValue("@Name", txtbxName.Text);
+                    cmd.Parameters.AddWithValue("@Description", descriptiontxt.Text);
+                    cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
+                    cmd.Parameters.AddWithValue("@ProductCategory", txtCategory.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", int.Parse(txtQuantity.Text));
+                    cmd.Parameters.AddWithValue("@LikesCount", 0);
+                    cmd.Parameters.AddWithValue("@ReviewsCount", 0);
+                    cmd.Parameters.AddWithValue("@Available", 1);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product Successfully Added");
+                    con.Close();
+                    checkUpdate = false;
 
-            if (checkUpdate == false)
-            {
-                var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("Insert into Products values (@AddedByUserID,@Name,@Description,@ProductCategory,@Price,@Quantity,@LikesCount,@ReviewsCount,@Available)", con);
-                cmd.Parameters.AddWithValue("@AddedByUserID", (U.UserID));
-                cmd.Parameters.AddWithValue("@Name", txtbxName.Text);
-                cmd.Parameters.AddWithValue("@Description", descriptiontxt.Text);
-                cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
-                cmd.Parameters.AddWithValue("@ProductCategory", txtCategory.Text);
-                cmd.Parameters.AddWithValue("@Quantity", int.Parse(txtQuantity.Text));
-                cmd.Parameters.AddWithValue("@LikesCount", 0);
-                cmd.Parameters.AddWithValue("@ReviewsCount", 0);
-                cmd.Parameters.AddWithValue("@Available", 1);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Product Successfully Added");
-                checkUpdate = false;
+                }
+                catch (Exception exp) { }
             }
+            
             else
             {
+                try
+                {
+                    var con2 = Configuration.getInstance().getConnection();
+                    con2.Open();
+                    SqlCommand cmd2 = new SqlCommand("Update Products Set AddedByUserID=@AddedByUserID,Name=@Name,Description=@Description,ProductCategory=@ProductCategory,Price=@Price,Quantity=@Quantity,LikesCount=@LikesCount,ReviewsCount=@ReviewsCount,Available=@Available  WHERE ProductID = @ProductID", con2);
 
-                var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("Update Products Set AddedByUserID=@AddedByUserID,Name=@Name,Description=@Description,ProductCategory=@ProductCategory,Price=@Price,Quantity=@Quantity,LikesCount=@LikesCount,ReviewsCount=@ReviewsCount,Available=@Available  WHERE ProductID = @ProductID", con);
+                    cmd2.Parameters.AddWithValue("@AddedByUserID", (p.AddedByUserID));
+                    cmd2.Parameters.AddWithValue("@Name", txtbxName.Text);
+                    cmd2.Parameters.AddWithValue("@Description", descriptiontxt.Text);
+                    cmd2.Parameters.AddWithValue("@Price", txtPrice.Text);
+                    cmd2.Parameters.AddWithValue("@ProductCategory", txtCategory.Text);
+                    cmd2.Parameters.AddWithValue("@Quantity", int.Parse(txtQuantity.Text));
+                    cmd2.Parameters.AddWithValue("@LikesCount", p.LikesCount);
+                    cmd2.Parameters.AddWithValue("@ReviewsCount", p.ReviewsCount);
+                    cmd2.Parameters.AddWithValue("@Available", 1);
+                    cmd2.Parameters.AddWithValue("@ProductID", p.ProductID);
+                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show("Product Updated Successfully");
+                    con2.Close();
 
-                cmd.Parameters.AddWithValue("@AddedByUserID", (p.AddedByUserID));
-                cmd.Parameters.AddWithValue("@Name", txtbxName.Text);
-                cmd.Parameters.AddWithValue("@Description", descriptiontxt.Text);
-                cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
-                cmd.Parameters.AddWithValue("@ProductCategory", txtCategory.Text);
-                cmd.Parameters.AddWithValue("@Quantity", int.Parse(txtQuantity.Text));
-                cmd.Parameters.AddWithValue("@LikesCount", p.LikesCount);
-                cmd.Parameters.AddWithValue("@ReviewsCount", p.ReviewsCount);
-                cmd.Parameters.AddWithValue("@Available", 1);
-                cmd.Parameters.AddWithValue("@ProductID", p.ProductID);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Product Updated Successfully");
-
-                checkUpdate = false;
+                    checkUpdate = false;
+                }
+                catch (Exception exp) { }
             }
-
+         
             refresh();
             view();
             DataBind();
@@ -122,7 +137,8 @@ namespace CRUDA.UCs
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Update);
-            dataGridView1.Columns.Add(Delete);
+       
+
         }
 
 
@@ -185,10 +201,9 @@ namespace CRUDA.UCs
             catch (Exception ex) { }
         }
 
+        private void AddProduct_UC_Load(object sender, EventArgs e)
+        {
 
-
-
-
-  
+        }
     }
 }

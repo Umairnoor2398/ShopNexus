@@ -17,6 +17,7 @@ using iText.IO.Image;
 using CRUDA.Forms;
 using CRUDA.Classes;
 using CRUDA.UCs;
+using System.Web.UI.Design.WebControls;
 
 namespace CRUDA
 {
@@ -25,7 +26,7 @@ namespace CRUDA
 
 
         User u= new User();
-        
+
         bool studentlist;
 
 
@@ -207,6 +208,9 @@ namespace CRUDA
             else if (u.UserRole == "Admin")
             {
                 accountlbl.Text = u.UserName;
+                op1.Text = "View Users";
+                op1.Visible = true;
+
             }
             else if (u.UserRole == "Seller")
             {
@@ -331,13 +335,19 @@ namespace CRUDA
             }
             else if (u.UserRole == "Admin")
             {
-
+                this.pParent.Controls.Clear();
+                loadc(new ViewUsersUC());
             }
             else if (u.UserRole == "Seller")
             {
                 this.pParent.Controls.Clear();
                 loadc(new AddProduct_UC(u, false));
             }
+        }
+
+        private void op4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
