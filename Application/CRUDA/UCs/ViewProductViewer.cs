@@ -40,13 +40,10 @@ namespace CRUDA.UCs
             ViewProducts[] listitems = new ViewProducts[x];
             for (int i = 0; i < x; i++)
             {
-                if (user.UserRole == "")
-                {
+                
                     listitems[i] = new ViewProducts(u[i], user);
-                }
-                else {
-                    listitems[i] = new ViewProducts(u[i], user, cart_id);
-                }
+                
+              
                 
                 //if (flowLayoutPanel1.Controls.Count > 0) {
                 //    flowLayoutPanel1.Controls.Clear();
@@ -59,7 +56,31 @@ namespace CRUDA.UCs
 
 
         }
+        private void PopulateItemsViewer2(int x)
+        {
 
+
+            ViewProducts[] listitems = new ViewProducts[x];
+            for (int i = 0; i < x; i++)
+            {
+              
+                   
+                
+                
+                    listitems[i] = new ViewProducts(u[i], user, cart_id);
+                
+
+                //if (flowLayoutPanel1.Controls.Count > 0) {
+                //    flowLayoutPanel1.Controls.Clear();
+
+                //}
+
+                flowLayoutPanel1.Controls.Add(listitems[i]);
+
+            }
+
+
+        }
         private void getProductsViewer()
         {
 
@@ -127,7 +148,17 @@ namespace CRUDA.UCs
 
                 int x = countProductsViewer();
                 getProductsViewer();
-                PopulateItemsViewer(x);
+                if (user.UserRole == "")
+                {
+                    PopulateItemsViewer(x);
+                }
+                else {
+
+                    PopulateItemsViewer2(x);
+                }
+               
+
+
             }
             catch (Exception ex) { }
         }

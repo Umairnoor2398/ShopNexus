@@ -323,6 +323,16 @@ namespace CRUDA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sample {
+            get {
+                object obj = ResourceManager.GetObject("sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vector_horizontal_banner_concept_learning_600w_689761090 {
             get {
                 object obj = ResourceManager.GetObject("vector-horizontal-banner-concept-learning-600w-689761090", resourceCulture);

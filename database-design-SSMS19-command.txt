@@ -89,13 +89,13 @@ CREATE TABLE Communication (
 CREATE TABLE Billing (
     BillingID INT IDENTITY(1,1) PRIMARY KEY,
     OrdersID INT,
-    SellerID INT,
-	TotalPrice Int,
+	TotalPrice decimal,
+	AmountRecived decimal,
+	AmountReturned decimal,
     DateOfBilling DATETIME,
     FOREIGN KEY (OrdersID) REFERENCES orders(OrderID),
-    FOREIGN KEY (SellerID) REFERENCES Users(UserID) -- Assuming there is a Sellers table with a SellerID column
-);
 
+);
   
 -- Create the Orders Table
 

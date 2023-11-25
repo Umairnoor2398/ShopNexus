@@ -328,3 +328,9 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Forms.Not
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewReviewsUC.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.CartItemUC.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewCartUC.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.BillingUC.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Collections.Immutable.xml
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Reflection.Metadata.xml
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Reflection.MetadataLoadContext.xml
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Text.Encodings.Web.xml
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Text.Json.xml

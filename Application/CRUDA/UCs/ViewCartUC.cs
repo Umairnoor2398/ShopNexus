@@ -106,20 +106,23 @@ namespace CRUDA.UCs
         private int CheckOrder()
         {
             int x = 0;
-            var con6 = Configuration.getInstance().getConnection();
-
-            SqlCommand cmd6 = new SqlCommand($"  select count(*) from Orders where CartID={cart_id}", con6);
-
-
-            SqlDataReader reader = cmd6.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                if (reader.GetInt32(0) != null && reader.GetInt32(0) > 0) { x = reader.GetInt32(0); }
+                var con6 = Configuration.getInstance().getConnection();
 
+                SqlCommand cmd6 = new SqlCommand($"  select count(*) from Orders where CartID={cart_id}", con6);
+
+
+                SqlDataReader reader = cmd6.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetInt32(0) != null && reader.GetInt32(0) > 0) { x = reader.GetInt32(0); }
+
+                }
+                reader.Close();
+                cmd6.ExecuteNonQuery();
             }
-            reader.Close();
-            cmd6.ExecuteNonQuery();
-
+            catch (Exception ex) { }
 
 
             return x;
