@@ -124,7 +124,8 @@ namespace CRUDA.UCs
         private void view()
         {
             var con2 = Configuration.getInstance().getConnection();
-            SqlCommand cmd2 = new SqlCommand("Select * from products", con2);
+            SqlCommand cmd2 = new SqlCommand("Select * from products where AddedByUserID=@Id", con2);
+            cmd2.Parameters.AddWithValue("@ID", U.UserID);
             SqlDataAdapter da = new SqlDataAdapter(cmd2);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -215,7 +216,13 @@ namespace CRUDA.UCs
                 p.Quantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
                 p.LikesCount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
                 p.ReviewsCount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString());
-                p.Available = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString());
+                if (dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "true")
+                {
+                    p.Available = 1;
+                }
+                else { p.Available = 0; }
+                
+                MessageBox.Show("You have Selected Product of Product ID = " + p.ProductID.ToString());
             }
             catch (Exception ex) { }
         }
@@ -235,7 +242,10 @@ namespace CRUDA.UCs
                 SqlDataReader reader = cmd4.ExecuteReader();
                 while (reader.Read())
                 {
-                    X = (reader.GetInt32(0));
+                    if (reader.GetInt32(0) != null && reader.GetInt32(0) !=0) {
+                        X = (reader.GetInt32(0));
+
+                    }
                 }
                 reader.Close();
                 if (X == 1)
@@ -262,7 +272,7 @@ namespace CRUDA.UCs
         {
             check();
             MessageBox.Show("To Add Image first add the product and then select the product from the list and then upload the image of the product");
-            if (addproduct && check_products_img_count)
+            if (addproduct && !check_products_img_count)
             {
                 MessageBox.Show("You have Selected Product of Product ID = "+p.ProductID.ToString());
                 try
