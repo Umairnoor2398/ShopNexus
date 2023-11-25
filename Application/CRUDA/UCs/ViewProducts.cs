@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRUDA.Classes;
+using CRUDA.Forms;
 namespace CRUDA.UCs
 {
     public partial class ViewProducts : UserControl
@@ -62,7 +63,13 @@ namespace CRUDA.UCs
             {
                 MessageBox.Show("Login In First To Do the Action");
 
+            } else if (user.UserRole == "Buyer") {
+
+                Form f = new NotificationForm(u,user);
+                f.ShowDialog();
             }
+
+
         }
 
         private void ViewProducts_Load(object sender, EventArgs e)

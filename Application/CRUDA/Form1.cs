@@ -218,6 +218,13 @@ namespace CRUDA
                 op1.Text = "Add Product";
                 op1.Visible = true;
             }
+            else if (u.UserRole == "Buyer")
+            {
+                accountlbl.Text = u.UserName;
+                op1.Text = "All Products";
+                op1.Visible = true;
+                loadc(new ViewProductViewer(u));
+            }
         }
 
         private void studentListToolStripMenuItem_Click(object sender, EventArgs e)

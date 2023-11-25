@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProducts));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -179,11 +179,11 @@
             this.Cart_Btn.ColorContrastOnClick = 45;
             this.Cart_Btn.ColorContrastOnHover = 45;
             this.Cart_Btn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.Cart_Btn.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.Cart_Btn.CustomizableEdges = borderEdges1;
             this.Cart_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Cart_Btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.Cart_Btn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -252,7 +252,7 @@
             // 
             // cart_btn2
             // 
-            this.cart_btn2.Image = global::CRUDA.Properties.Resources.icons8_cart_25;
+            this.cart_btn2.Image = global::CRUDA.Properties.Resources.icons8_review_20;
             this.cart_btn2.Location = new System.Drawing.Point(204, 3);
             this.cart_btn2.Name = "cart_btn2";
             this.cart_btn2.Size = new System.Drawing.Size(37, 24);
@@ -332,10 +332,10 @@
             // 
             this.price_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.price_lbl.AutoSize = true;
-            this.price_lbl.Font = new System.Drawing.Font("MingLiU-ExtB", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price_lbl.Location = new System.Drawing.Point(185, 11);
+            this.price_lbl.Font = new System.Drawing.Font("MingLiU-ExtB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_lbl.Location = new System.Drawing.Point(185, 10);
             this.price_lbl.Name = "price_lbl";
-            this.price_lbl.Size = new System.Drawing.Size(0, 11);
+            this.price_lbl.Size = new System.Drawing.Size(0, 13);
             this.price_lbl.TabIndex = 25;
             // 
             // bunifuLabel6
