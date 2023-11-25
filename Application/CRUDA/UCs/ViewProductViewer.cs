@@ -17,10 +17,21 @@ namespace CRUDA.UCs
     {
         List<ProductViewSeller> u = new List<ProductViewSeller>();// for admin to view all users login in at that time 
         User user;
+        int cart_id = 0;
+        SqlConnection con,con2;
+        
+        
+        public ViewProductViewer(User user,int cart_id)
+        {
+            InitializeComponent();
+            this.user = user; 
+            this.cart_id = cart_id; 
+        }
         public ViewProductViewer(User user)
         {
             InitializeComponent();
-            this.user = user;   
+            this.user = user;
+           
         }
         private void PopulateItemsViewer(int x)
         {
@@ -29,8 +40,14 @@ namespace CRUDA.UCs
             ViewProducts[] listitems = new ViewProducts[x];
             for (int i = 0; i < x; i++)
             {
-
-                listitems[i] = new ViewProducts(u[i],user);
+                if (user.UserRole == "")
+                {
+                    listitems[i] = new ViewProducts(u[i], user);
+                }
+                else {
+                    listitems[i] = new ViewProducts(u[i], user, cart_id);
+                }
+                
                 //if (flowLayoutPanel1.Controls.Count > 0) {
                 //    flowLayoutPanel1.Controls.Clear();
 
@@ -46,7 +63,7 @@ namespace CRUDA.UCs
         private void getProductsViewer()
         {
 
-            var con2 = Configuration.getInstance().getConnection();
+              con2 = Configuration.getInstance().getConnection();
 
             SqlCommand cmd2 = new SqlCommand($" select p.ProductID, u.UserName, p.Name,p.Description,p.ProductCategory,p.Price,p.Quantity,p.LikesCount,p.ReviewsCount,p.Available  from Users as U join Products as p on p.AddedByUserID=u.UserID ", con2);
 
@@ -66,14 +83,16 @@ namespace CRUDA.UCs
             }
             reader.Close();
             cmd2.ExecuteNonQuery();
-
+            
+           
+    
 
         }
         private int countProductsViewer()
         {
             int x = 0;
-            var con = Configuration.getInstance().getConnection();
-
+             con = Configuration.getInstance().getConnection();
+        
             SqlCommand cmd = new SqlCommand($"  select count(*)  from Users as U join Products as p on p.AddedByUserID=u.UserID", con);
 
 
@@ -84,7 +103,8 @@ namespace CRUDA.UCs
             }
             reader.Close();
             cmd.ExecuteNonQuery();
-
+            
+           
 
 
             return x;
@@ -104,6 +124,7 @@ namespace CRUDA.UCs
         {
             try
             {
+
                 int x = countProductsViewer();
                 getProductsViewer();
                 PopulateItemsViewer(x);

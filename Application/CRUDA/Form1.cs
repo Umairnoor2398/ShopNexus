@@ -18,6 +18,8 @@ using CRUDA.Forms;
 using CRUDA.Classes;
 using CRUDA.UCs;
 using System.Web.UI.Design.WebControls;
+using System.Data.SqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace CRUDA
 {
@@ -25,10 +27,10 @@ namespace CRUDA
     {
 
 
-        User u= new User();
+        User u = new User();
 
         bool studentlist;
-
+        int cart_id_buyer = 0;
 
         public DashBoard()
         {
@@ -76,7 +78,7 @@ namespace CRUDA
         //        heading.Alignment = Element.ALIGN_CENTER;
         //        heading.SpacingBefore = 10f;
         //        heading.SpacingAfter = 10f;
-                 
+
         //        document.Add(heading);
 
         //        LineSeparator line = new LineSeparator();
@@ -194,10 +196,42 @@ namespace CRUDA
 
         }
 
-        
 
- 
 
+
+        private void load_buyer_cart()
+        {
+
+
+            if (u.UserRole == "Buyer")
+            {
+                try
+                {
+                    var con = Configuration.getInstance().getConnection();
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Carts(UserID, Date, Ended)   OUTPUT INSERTED.CartID VALUES(@userID, @date_added, @date_ended)", con);
+                    cmd.Parameters.AddWithValue("@userID", (u.UserID));
+                    cmd.Parameters.AddWithValue("@date_added", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@date_ended", string.Empty);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (reader.GetInt32(0) != null && reader.GetInt32(0) != 0)
+                        {
+                            cart_id_buyer = (reader.GetInt32(0));
+
+                        }
+                    }
+
+                    cmd.ExecuteNonQuery();
+
+
+
+                }
+                catch (Exception exp) { }
+
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -224,10 +258,13 @@ namespace CRUDA
             }
             else if (u.UserRole == "Buyer")
             {
+                load_buyer_cart();
                 accountlbl.Text = u.UserName;
+                op2.Text = "View Cart";
+                op2.Visible = true;
                 op1.Text = "All Products";
                 op1.Visible = true;
-                loadc(new ViewProductViewer(u));
+                loadc(new ViewProductViewer(u,cart_id_buyer));
             }
         }
 
@@ -253,7 +290,7 @@ namespace CRUDA
 
         // In Form2
 
-    
+
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -269,10 +306,10 @@ namespace CRUDA
 
         private void rubericLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-                this.pParent.Controls.Clear();
-                //loadc(new AssessCompC());
-            
+
+            this.pParent.Controls.Clear();
+            //loadc(new AssessCompC());
+
         }
 
         private void assessmentComponentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -282,12 +319,7 @@ namespace CRUDA
             //loadc(new ViewAttendanceC());
         }
 
-        private void Studentfromlbl_Click_1(object sender, EventArgs e)
-        {
-            
-                this.pParent.Controls.Clear();
-                loadc(new Student());
-        }
+
 
         private void toolStriplblAllRight_Click(object sender, EventArgs e)
         {
@@ -309,7 +341,7 @@ namespace CRUDA
 
         }
 
-    
+
 
         private void account_Click(object sender, EventArgs e)
         {
@@ -356,6 +388,11 @@ namespace CRUDA
                 this.pParent.Controls.Clear();
                 loadc(new AddProduct_UC(u, false));
             }
+            else {
+                this.pParent.Controls.Clear();
+                loadc(new ViewProductViewer(u,cart_id_buyer));
+
+            }
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
@@ -382,8 +419,14 @@ namespace CRUDA
             else if (u.UserRole == "Seller")
             {
                 this.pParent.Controls.Clear();
-            
+
                 loadc(new ViewReviewsUC(u));
+            }
+            else {
+                this.pParent.Controls.Clear();
+
+                loadc(new ViewCartUC(cart_id_buyer));
+
             }
 
         }

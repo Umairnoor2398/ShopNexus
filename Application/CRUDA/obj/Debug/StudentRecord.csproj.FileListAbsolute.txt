@@ -250,7 +250,6 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.DashBoard
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Forms.LoginForm.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.MainForm.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Properties.Resources.resources
-C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Student.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.AddProduct_UC.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.loginUC.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.SignupUC.resources
@@ -327,3 +326,5 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewP
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewProducts.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Forms.NotificationForm.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewReviewsUC.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.CartItemUC.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewCartUC.resources

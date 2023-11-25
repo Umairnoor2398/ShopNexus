@@ -429,23 +429,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Student.Designer.cs">
-      <DependentUpon>Student.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCs\AddProduct_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCs\AddProduct_UC.Designer.cs">
       <DependentUpon>AddProduct_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCs\CartItemUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\CartItemUC.Designer.cs">
+      <DependentUpon>CartItemUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCs\loginUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCs\loginUC.Designer.cs">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\ViewCartUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\ViewCartUC.Designer.cs">
+      <DependentUpon>ViewCartUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UCs\ViewProductViewer.cs">
       <SubType>UserControl</SubType>
@@ -501,14 +507,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student.resx">
-      <DependentUpon>Student.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCs\AddProduct_UC.resx">
       <DependentUpon>AddProduct_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCs\CartItemUC.resx">
+      <DependentUpon>CartItemUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCs\loginUC.resx">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\ViewCartUC.resx">
+      <DependentUpon>ViewCartUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\ViewProductViewer.resx">
       <DependentUpon>ViewProductViewer.cs</DependentUpon>

@@ -58,6 +58,20 @@ namespace CRUDA.Classes
             Available = 0;
         }
 
+
+        public Product(int productID,string name,string description,string productCategory,decimal price)
+        {
+            ProductID = productID;
+            AddedByUserID = 0;
+            Name = name;
+            Description = description;
+            ProductCategory = productCategory;
+            Price = price;
+            Quantity = 0;
+            LikesCount = 0;
+            ReviewsCount = 0;
+            Available = 1;
+        }
         // You can add methods or additional functionality as needed
     }
 
