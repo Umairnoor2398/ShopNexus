@@ -522,6 +522,9 @@
     <EmbeddedResource Include="UCs\UserDataUC.resx">
       <DependentUpon>UserDataUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCs\ViewReviewsUC.resx">
+      <DependentUpon>ViewReviewsUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCs\ViewUsersUC.resx">
       <DependentUpon>ViewUsersUC.cs</DependentUpon>
     </EmbeddedResource>

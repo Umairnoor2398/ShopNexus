@@ -326,3 +326,4 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.exe.licen
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewProductViewer.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewProducts.resources
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.Forms.NotificationForm.resources
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.ViewReviewsUC.resources

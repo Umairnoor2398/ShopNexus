@@ -215,8 +215,12 @@ namespace CRUDA
             else if (u.UserRole == "Seller")
             {
                 accountlbl.Text = u.UserName;
+                op2.Text = "View Product Reviews";
+                op2.Visible = true;
                 op1.Text = "Add Product";
                 op1.Visible = true;
+
+
             }
             else if (u.UserRole == "Buyer")
             {
@@ -356,6 +360,31 @@ namespace CRUDA
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void op4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void op2_Click_1(object sender, EventArgs e)
+        {
+
+            if (u.UserRole == "")// viewer
+            {
+
+            }
+            else if (u.UserRole == "Admin")
+            {
+
+            }
+            else if (u.UserRole == "Seller")
+            {
+                this.pParent.Controls.Clear();
+            
+                loadc(new ViewReviewsUC(u));
+            }
 
         }
     }
