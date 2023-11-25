@@ -1,4 +1,6 @@
 ﻿using CRUDA.Classes;
+using iText.Layout.Borders;
+using Org.BouncyCastle.Utilities.Collections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +17,13 @@ namespace CRUDA.UCs
     public partial class ViewCartUC : UserControl
     {
         List<Product> u = new List<Product>();// for admin to view all users login in at that time 
-      
+        int user_id = 0;
         int cart_id=0;
-        public ViewCartUC(int cart_id)
+        public ViewCartUC(int cart_id,int user_id)
         {
             InitializeComponent();
             this.cart_id = cart_id;
+            this.user_id = user_id; 
         }
         private void PopulateItems(int x)
         {
@@ -89,16 +92,58 @@ namespace CRUDA.UCs
                 PopulateItems(x);
             }
             catch (Exception ex) { }
+
+            if (CheckOrder() > 1) {
+
+                ConfirmOrderBtn.Visible = false;
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        private int CheckOrder()
+        {
+            int x = 0;
+            var con6 = Configuration.getInstance().getConnection();
 
+            SqlCommand cmd6 = new SqlCommand($"  select count(*) from Orders where CartID={cart_id}", con6);
+
+
+            SqlDataReader reader = cmd6.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.GetInt32(0) != null && reader.GetInt32(0) > 0) { x = reader.GetInt32(0); }
+
+            }
+            reader.Close();
+            cmd6.ExecuteNonQuery();
+
+
+
+            return x;
+        }
         private void ConfirmOrderBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var con5 = Configuration.getInstance().getConnection();
 
-        }
+                SqlCommand cmd5 = new SqlCommand($"INSERT into Orders  VALUES({user_id},{cart_id},@date_added)", con5);
+
+                cmd5.Parameters.AddWithValue("@date_added", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+               
+
+                cmd5.ExecuteNonQuery();
+                MessageBox.Show("Order Confirmed \n  Go to Biling Section");
+                
+                    ConfirmOrderBtn.Visible = false;
+                
+            }
+            catch (Exception exp) { }
+            
+            }
     }
 }

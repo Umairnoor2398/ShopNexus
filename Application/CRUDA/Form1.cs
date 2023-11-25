@@ -425,7 +425,7 @@ namespace CRUDA
             else {
                 this.pParent.Controls.Clear();
 
-                loadc(new ViewCartUC(cart_id_buyer));
+                loadc(new ViewCartUC(cart_id_buyer,u.UserID));
 
             }
 

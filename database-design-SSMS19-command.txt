@@ -72,25 +72,8 @@ CREATE TABLE CartItems (
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 
--- Create the Orders Table
-CREATE TABLE Orders (
-    OrderID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT,
-    AddressID INT,
-    Date DATETIME NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (AddressID) REFERENCES UserAddresses(AddressessID)
-);
 
--- Create the OrderItems Table
-CREATE TABLE OrderItems (
-    OrderItemID INT PRIMARY KEY,
-    OrderID INT,
-    ProductID INT,
-    Quantity INT,
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
-);
+
 
 -- Create the Communication Table
 CREATE TABLE Communication (
@@ -103,14 +86,27 @@ CREATE TABLE Communication (
     FOREIGN KEY (UserTwoID) REFERENCES Users(UserID)
 );
 
--- Create the Billing Table with Positive Amount Constraints
 CREATE TABLE Billing (
     BillingID INT IDENTITY(1,1) PRIMARY KEY,
-    CartID INT,
-    ActualBillPrice DECIMAL(10, 2) CHECK (ActualBillPrice > 0), -- Adding the CHECK constraint
-    ReturnedAmount DECIMAL(10, 2) CHECK (ReturnedAmount > 0), -- Adding the CHECK constraint
-    PriceReceived DECIMAL(10, 2) CHECK (PriceReceived > 0), -- Adding the CHECK constraint
-    FOREIGN KEY (CartID) REFERENCES Carts(CartID)
+    OrdersID INT,
+    SellerID INT,
+	TotalPrice Int,
+    DateOfBilling DATETIME,
+    FOREIGN KEY (OrdersID) REFERENCES orders(OrderID),
+    FOREIGN KEY (SellerID) REFERENCES Users(UserID) -- Assuming there is a Sellers table with a SellerID column
+);
+
+  
+-- Create the Orders Table
+
+
+CREATE TABLE Orders (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+	cartID INT,
+    Date DATETIME NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+	FOREIGN KEY (cartID) REFERENCES Carts(cartID)
 );
 
 
