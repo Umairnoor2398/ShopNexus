@@ -135,6 +135,8 @@ namespace CRUDA
             else if (u.UserRole == "Admin")
             {
                 accountlbl.Text = u.UserName;
+                op3.Text = "Communication Details";
+                op3.Visible = true;
                 op2.Text = "Sold Orders";
                 op2.Visible = true;
                 op1.Text = "View Users";
@@ -144,6 +146,8 @@ namespace CRUDA
             else if (u.UserRole == "Seller")
             {
                 accountlbl.Text = u.UserName;
+                op4.Text = "Messages";
+                op4.Visible = true;
                 op3.Text = "Sold Orders";
                 op3.Visible = true;
                 op2.Text = "View Product Reviews";
@@ -156,6 +160,8 @@ namespace CRUDA
             {
                 load_buyer_cart();
                 accountlbl.Text = u.UserName;
+                op4.Text = "Messages";
+                op4.Visible = true;
                 op3.Text = "Billing";
                 op3.Visible = true;
                 op2.Text = "View Cart";
@@ -300,7 +306,27 @@ namespace CRUDA
 
         private void op4_Click(object sender, EventArgs e)
         {
+            if (u.UserRole == "")// viewer
+            {
 
+            }
+            else if (u.UserRole == "Admin")
+            {
+
+            }
+            else if (u.UserRole == "Seller")
+            {
+                this.pParent.Controls.Clear();
+
+                loadc(new MessagesUC(u.UserID,u));
+            }
+            else
+            {
+                this.pParent.Controls.Clear();
+
+                loadc(new MessagesUC(u.UserID,u));
+
+            }
         }
 
         private void op2_Click_1(object sender, EventArgs e)
@@ -339,7 +365,9 @@ namespace CRUDA
             }
             else if (u.UserRole == "Admin")
             {
+                this.pParent.Controls.Clear();
 
+                loadc(new MessagesUC("Admin"));
             }
             else if (u.UserRole == "Seller")
             {

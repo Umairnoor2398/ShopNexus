@@ -425,6 +425,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NotificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,12 @@
     </Compile>
     <Compile Include="UCs\loginUC.Designer.cs">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\MessagesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\MessagesUC.Designer.cs">
+      <DependentUpon>MessagesUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UCs\NotificationsSaledProductsUC.cs">
       <SubType>UserControl</SubType>
@@ -522,6 +534,9 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\loginUC.resx">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\MessagesUC.resx">
+      <DependentUpon>MessagesUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\NotificationsSaledProductsUC.resx">
       <DependentUpon>NotificationsSaledProductsUC.cs</DependentUpon>
@@ -664,6 +682,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-message.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons8-message-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\msg.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

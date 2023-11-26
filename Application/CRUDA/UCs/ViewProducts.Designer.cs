@@ -43,7 +43,6 @@
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.review_lbl = new System.Windows.Forms.Label();
@@ -53,12 +52,15 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.description_lbl = new System.Windows.Forms.Label();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureProduct = new System.Windows.Forms.PictureBox();
             this.Cart_Btn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cart_btn2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.avalaibilityImg = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -68,11 +70,13 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_btn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avalaibilityImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -181,13 +185,13 @@
             this.tableLayoutPanel5.Controls.Add(this.price_lbl, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.bunifuLabel6, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuLabel3, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.bunifuLabel2, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.bunifuLabel1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.review_lbl, 1, 5);
             this.tableLayoutPanel5.Controls.Add(this.likes_lbl, 1, 4);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel8, 0, 4);
             this.tableLayoutPanel5.Controls.Add(this.avalaibilityImg, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel10, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -285,23 +289,6 @@
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.bunifuLabel5.Click += new System.EventHandler(this.bunifuLabel5_Click);
-            // 
-            // bunifuLabel3
-            // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(44, 75);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(45, 20);
-            this.bunifuLabel3.TabIndex = 18;
-            this.bunifuLabel3.Text = "Seller";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel3.Click += new System.EventHandler(this.bunifuLabel3_Click);
             // 
             // bunifuLabel2
             // 
@@ -436,6 +423,37 @@
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.bunifuLabel7.Click += new System.EventHandler(this.bunifuLabel7_Click);
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.95276F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.04725F));
+            this.tableLayoutPanel10.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.bunifuLabel3, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 71);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(127, 28);
+            this.tableLayoutPanel10.TabIndex = 28;
+            // 
+            // bunifuLabel3
+            // 
+            this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.CursorType = null;
+            this.bunifuLabel3.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Location = new System.Drawing.Point(27, 4);
+            this.bunifuLabel3.Name = "bunifuLabel3";
+            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel3.Size = new System.Drawing.Size(45, 20);
+            this.bunifuLabel3.TabIndex = 19;
+            this.bunifuLabel3.Text = "Seller";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // pictureProduct
             // 
@@ -575,14 +593,27 @@
             // 
             // avalaibilityImg
             // 
+            this.avalaibilityImg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avalaibilityImg.Image = global::CRUDA.Properties.Resources.icons8_checked_20;
             this.avalaibilityImg.Location = new System.Drawing.Point(136, 105);
             this.avalaibilityImg.Name = "avalaibilityImg";
-            this.avalaibilityImg.Size = new System.Drawing.Size(99, 18);
+            this.avalaibilityImg.Size = new System.Drawing.Size(99, 28);
             this.avalaibilityImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.avalaibilityImg.TabIndex = 24;
             this.avalaibilityImg.TabStop = false;
             this.avalaibilityImg.Click += new System.EventHandler(this.avalaibilityImg_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::CRUDA.Properties.Resources.msg;
+            this.pictureBox1.Location = new System.Drawing.Point(102, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ViewProducts
             // 
@@ -607,11 +638,14 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_btn2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avalaibilityImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,7 +669,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private System.Windows.Forms.Label review_lbl;
@@ -647,5 +680,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label description_lbl;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
     }
 }

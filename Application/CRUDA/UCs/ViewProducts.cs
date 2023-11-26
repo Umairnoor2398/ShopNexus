@@ -18,6 +18,7 @@ namespace CRUDA.UCs
         User user;
         int availablitycheck=0;
         int cart_id=0;
+        int sellerid=0;
         public ViewProducts(ProductViewSeller u, User user, int cart_id)
         {
             InitializeComponent();
@@ -142,6 +143,8 @@ namespace CRUDA.UCs
             category_lbl.Text = u.ProductCategory;
             price_lbl.Text = u.Price.ToString() + " PKR";
 
+
+            check_seller();
 
 
             var con2 = Configuration.getInstance().getConnection();
@@ -288,6 +291,29 @@ namespace CRUDA.UCs
         private void avalaibilityImg_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void check_seller() {
+            var con8 = Configuration.getInstance().getConnection();
+
+            SqlCommand cmd8 = new SqlCommand($" select AddedByUserID from Products where ProductID={u.ProductID}", con8);
+       
+
+            SqlDataReader reader = cmd8.ExecuteReader();
+            while (reader.Read())
+            {
+                 sellerid = (reader.GetInt32(0));
+               
+            }
+            reader.Close();
+            cmd8.ExecuteNonQuery();
+
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form x = new MessageForm(sellerid,user.UserID);
+            x.ShowDialog();
         }
     }
 }

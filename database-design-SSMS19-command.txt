@@ -76,15 +76,16 @@ CREATE TABLE CartItems (
 
 
 -- Create the Communication Table
-CREATE TABLE Communication (
+CREATE TABLE Communications (
     CommunicationID INT IDENTITY(1,1) PRIMARY KEY,
-    UserOneID INT,
-    UserTwoID INT,
+    Sender INT,
+    Receiver INT,
     Message TEXT, -- Message can be NULL
     Date DATETIME NOT NULL,
-    FOREIGN KEY (UserOneID) REFERENCES Users(UserID),
-    FOREIGN KEY (UserTwoID) REFERENCES Users(UserID)
+    FOREIGN KEY (Sender) REFERENCES Users(UserID),
+    FOREIGN KEY (Receiver) REFERENCES Users(UserID)
 );
+
 
 CREATE TABLE Billing (
     BillingID INT IDENTITY(1,1) PRIMARY KEY,
