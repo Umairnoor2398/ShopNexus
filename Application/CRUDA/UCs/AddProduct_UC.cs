@@ -21,8 +21,10 @@ namespace CRUDA.UCs
         string imglocation= string.Empty;
         bool checkimg=false;
         bool addproduct = false;
-
+        bool check_n = false;
+        bool check_c = false;
         bool check_products_img_count = false;
+        bool check_price = false;
 
         public AddProduct_UC(User u, bool checkUpdate)
         {
@@ -312,11 +314,6 @@ namespace CRUDA.UCs
                 }
 
 
-
-
-
-
-
             }
             else {
 
@@ -325,18 +322,86 @@ namespace CRUDA.UCs
             }
 
 
-
-
-
-
-
-
-
         }
 
         private void txtQuantity_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbxName_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (txtbxName.Text == string.Empty)
+            {// check is empty
+                lblNameSingal.Text = "Enter the name";
+                check_n = false;
+            }
+            //else if (int.TryParse(Firsttxtbx.Text, out i))
+            //{//Check isnumberic
+            //    lblFirstNameSingal.Text = "Allowed characters: a-z, A-Z";
+            //    check_f = false;
+            //}
+            else if (txtbxName.Text.Any(ch => !char.IsLetter(ch)))
+
+            {//check isSpecialCharactor
+                lblNameSingal.Text = "Allowed characters: a-z, A-Z";
+                check_n = false;
+            }
+            else
+            {//ready for storage or action
+                lblNameSingal.Text = " ";
+                check_n = true;
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            
+                int price;
+                if (txtPrice.Text == string.Empty)
+                {
+                    lblPriceSignal.Text = "Enter the price";
+                    check_price = false;
+                }
+                else if (!int.TryParse(txtPrice.Text, out price) || price >= 1000000)
+                {
+                    lblPriceSignal.Text = "Enter a valid price (less than 1000000)";
+                    check_price = false;
+                }
+                else
+                {
+                    lblPriceSignal.Text = " ";
+                    check_price = true;
+                }
+            
+
+        }
+
+        private void txtCategory_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (txtCategory.Text == string.Empty)
+            {// check is empty
+                lbllCategorySignal.Text = "Enter the data";
+                check_c = false;
+            }
+            //else if (int.TryParse(Firsttxtbx.Text, out i))
+            //{//Check isnumberic
+            //    lblFirstNameSingal.Text = "Allowed characters: a-z, A-Z";
+            //    check_f = false;
+            //}
+            else if (txtCategory.Text.Any(ch => !char.IsLetter(ch)))
+
+            {//check isSpecialCharactor
+                lbllCategorySignal.Text = "Allowed characters: a-z, A-Z";
+                check_c = false;
+            }
+            else
+            {//ready for storage or action
+                lbllCategorySignal.Text = " ";
+                check_c = true;
+            }
         }
     }
 }

@@ -63,6 +63,10 @@ namespace CRUDA.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            toolStriplblDate.Text = DateTime.Now.ToString("dddd dd/MM/yyyy");
+            toolStriplblTime.Text = DateTime.Now.ToString("hh:mm:ss:tt");
+
+
             if (checkgo = true) { 
             
             }

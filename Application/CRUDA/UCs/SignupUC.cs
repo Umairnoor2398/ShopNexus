@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
+using CRUDA.Classes;
 
 namespace CRUDA.UCs
 {
@@ -16,6 +17,93 @@ namespace CRUDA.UCs
     {
         string first, last, registeration, email, contact;
         int id, status;
+        Validation v = new Validation();
+
+
+
+        bool f = false;
+        bool l = false;
+        bool u = false;
+        bool p = false; bool c = false; bool ee = false;
+
+        private void txtbxusername_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (txtbxusername.Text == string.Empty)
+            {// check is empty
+                lblusernameSignal.Text = "Enter the name";
+                l = false;
+            }
+            else if (int.TryParse(txtbxusername.Text, out i))
+            {//Check isnumberic
+                lblusernameSignal.Text = "Allowed characters: a-z, A-Z";
+                l = false;
+            }
+            else if (txtbxusername.Text.Any(ch => !char.IsLetter(ch)))
+            {//check isSpecialCharactor
+                lblusernameSignal.Text = "Allowed characters: a-z, A-Z";
+                l = false;
+            }
+            else
+            {//ready for storage or action
+                lblusernameSignal.Text = " ";
+                l = true;
+            }
+        }
+
+        private void txtbxContactNumber_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (txtbxContactNumber.Text == string.Empty)
+            {// check is empty
+                lblContactNumberSignal.Text = "Enter the name";
+                c = false;
+            }
+            if (txtbxContactNumber.Text.Any(ch => !char.IsDigit(ch)))
+            {//check isSpecialCharactor
+                lblContactNumberSignal.Text = "Allowed characters: 1-9";
+                c = false;
+            }
+
+            else
+
+            {//ready for storage or action
+                lblContactNumberSignal.Text = " ";
+                c = false;
+            }
+            if (v.IsValidPhoneNumber(txtbxContactNumber.Text))
+            {
+                lblContactNumberSignal.Text = ("Phone number is valid.");
+
+                c = true;
+            }
+            
+        }
+
+        private void txtLASTName_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (txtLASTName.Text == string.Empty)
+            {// check is empty
+                lbllastNameSignal.Text = "Enter the name";
+                l = false;
+            }
+            else if (int.TryParse(txtLASTName.Text, out i))
+            {//Check isnumberic
+                lbllastNameSignal.Text = "Allowed characters: a-z, A-Z";
+                l = false;
+            }
+            else if (txtLASTName.Text.Any(ch => !char.IsLetter(ch)))
+            {//check isSpecialCharactor
+                lbllastNameSignal.Text = "Allowed characters: a-z, A-Z";
+                l = false;
+            }
+            else
+            {//ready for storage or action
+                lbllastNameSignal.Text = " ";
+                l = true;
+            }
+        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -33,8 +121,34 @@ namespace CRUDA.UCs
             this.Hide();
         }
 
+        private void Firsttxtbx_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (Firsttxtbx.Text == string.Empty)
+            {// check is empty
+                lblFirstNameSingal.Text = "Enter the name";
+                f = false;
+            }
+            //else if (int.TryParse(Firsttxtbx.Text, out i))
+            //{//Check isnumberic
+            //    lblFirstNameSingal.Text = "Allowed characters: a-z, A-Z";
+            //    check_f = false;
+            //}
+            else if (Firsttxtbx.Text.Any(ch => !char.IsLetter(ch)))
+
+            {//check isSpecialCharactor
+                lblFirstNameSingal.Text = "Allowed characters: a-z, A-Z";
+                f = false;
+            }
+            else
+            {//ready for storage or action
+                lblFirstNameSingal.Text = " ";
+                f = true;
+            }
+        }
+
         bool update = false;
-        bool check_f = false, check_l = false, check_r = false, check_e = false, check_c = false;
+
         public SignupUC()
         {
             InitializeComponent();
@@ -60,34 +174,48 @@ namespace CRUDA.UCs
         }
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            int y = check();
-            if (/*check_c && check_e && check_f && check_l && check_r*/0<1)
+            if (f && l && u && ee && c)
             {
 
 
-                if (update == false && y!=1  )
+
+
+
+
+
+                int y = check();
+                if (/*check_c && check_e && check_f && check_l && check_r*/0 < 1)
                 {
-                    var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("Insert into Users values (@UserName,@Password,@FirstName,@LastName,@Email,@Gender,@Contact,@UserRoles)", con);
-                cmd.Parameters.AddWithValue("@FirstName", (Firsttxtbx.Text));
-                cmd.Parameters.AddWithValue("@LastName", txtLASTName.Text);
-                cmd.Parameters.AddWithValue("@UserName", txtbxusername.Text);
-                cmd.Parameters.AddWithValue("@Email", txtbxEmailAddress.Text);
-                cmd.Parameters.AddWithValue("@Contact", txtbxContactNumber.Text);
-                cmd.Parameters.AddWithValue("@Gender", cmbxGender.Text);     
-                cmd.Parameters.AddWithValue("@UserRoles", cmbxRole.Text);
-                cmd.Parameters.AddWithValue("@Password", textPassword.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("User Successfully Added");
-            }
 
-            if (y == 1) { MessageBox.Show("Already exist"); }
-            }
-            else
-            {
-                if (y == 1) { MessageBox.Show("Already exist"); }
 
-                MessageBox.Show("Fill the correct data first");
+                    if (update == false && y != 1)
+                    {
+                        var con = Configuration.getInstance().getConnection();
+                        SqlCommand cmd = new SqlCommand("Insert into Users values (@UserName,@Password,@FirstName,@LastName,@Email,@Gender,@Contact,@UserRoles)", con);
+                        cmd.Parameters.AddWithValue("@FirstName", (Firsttxtbx.Text));
+                        cmd.Parameters.AddWithValue("@LastName", txtLASTName.Text);
+                        cmd.Parameters.AddWithValue("@UserName", txtbxusername.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtbxEmailAddress.Text);
+                        cmd.Parameters.AddWithValue("@Contact", txtbxContactNumber.Text);
+                        cmd.Parameters.AddWithValue("@Gender", cmbxGender.Text);
+                        cmd.Parameters.AddWithValue("@UserRoles", cmbxRole.Text);
+                        cmd.Parameters.AddWithValue("@Password", textPassword.Text);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("User Successfully Added");
+                    }
+
+                    if (y == 1) { MessageBox.Show("Already exist"); }
+                }
+                else
+                {
+                    if (y == 1) { MessageBox.Show("Already exist"); }
+
+                    MessageBox.Show("Fill the correct data first");
+                }
+            }
+            else {
+                MessageBox.Show("Enter the Correct Data First");
+            
             }
         }
     }

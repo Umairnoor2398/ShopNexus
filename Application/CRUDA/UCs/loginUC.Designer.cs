@@ -32,17 +32,17 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblSignUp = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCreateAccount = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.lblRecordSignal = new System.Windows.Forms.Label();
-            this.gbx = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPasswoed = new System.Windows.Forms.TextBox();
             this.lblEmailSignal = new System.Windows.Forms.Label();
             this.lblPasswordSignal = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.lblRecordSignal = new System.Windows.Forms.Label();
+            this.gbx = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -121,6 +121,74 @@
             this.tableLayoutPanel3.TabIndex = 1;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.Location = new System.Drawing.Point(394, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(375, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.AccessibleName = "txtEmail";
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(581, 71);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(252, 20);
+            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            // 
+            // txtPasswoed
+            // 
+            this.txtPasswoed.AccessibleName = "txtPasswoed";
+            this.txtPasswoed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPasswoed.Location = new System.Drawing.Point(581, 177);
+            this.txtPasswoed.Name = "txtPasswoed";
+            this.txtPasswoed.Size = new System.Drawing.Size(252, 20);
+            this.txtPasswoed.TabIndex = 3;
+            this.txtPasswoed.TextChanged += new System.EventHandler(this.txtPasswoed_TextChanged);
+            // 
+            // lblEmailSignal
+            // 
+            this.lblEmailSignal.AccessibleName = "lblEmailSignal";
+            this.lblEmailSignal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblEmailSignal.AutoSize = true;
+            this.lblEmailSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.lblEmailSignal.Location = new System.Drawing.Point(702, 108);
+            this.lblEmailSignal.Name = "lblEmailSignal";
+            this.lblEmailSignal.Size = new System.Drawing.Size(10, 13);
+            this.lblEmailSignal.TabIndex = 25;
+            this.lblEmailSignal.Text = " ";
+            // 
+            // lblPasswordSignal
+            // 
+            this.lblPasswordSignal.AccessibleName = "lblPasswordSignal";
+            this.lblPasswordSignal.AutoSize = true;
+            this.lblPasswordSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.lblPasswordSignal.Location = new System.Drawing.Point(569, 214);
+            this.lblPasswordSignal.Name = "lblPasswordSignal";
+            this.lblPasswordSignal.Size = new System.Drawing.Size(10, 13);
+            this.lblPasswordSignal.TabIndex = 26;
+            this.lblPasswordSignal.Text = " ";
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
@@ -192,71 +260,6 @@
             this.gbx.TabIndex = 3;
             this.gbx.TabStop = false;
             this.gbx.Enter += new System.EventHandler(this.gbx_Enter);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(394, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(375, 175);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.AccessibleName = "txtEmail";
-            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(581, 75);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(252, 20);
-            this.txtEmail.TabIndex = 2;
-            // 
-            // txtPasswoed
-            // 
-            this.txtPasswoed.AccessibleName = "txtPasswoed";
-            this.txtPasswoed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPasswoed.Location = new System.Drawing.Point(581, 177);
-            this.txtPasswoed.Name = "txtPasswoed";
-            this.txtPasswoed.Size = new System.Drawing.Size(252, 20);
-            this.txtPasswoed.TabIndex = 3;
-            // 
-            // lblEmailSignal
-            // 
-            this.lblEmailSignal.AccessibleName = "lblEmailSignal";
-            this.lblEmailSignal.AutoSize = true;
-            this.lblEmailSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
-            this.lblEmailSignal.Location = new System.Drawing.Point(569, 108);
-            this.lblEmailSignal.Name = "lblEmailSignal";
-            this.lblEmailSignal.Size = new System.Drawing.Size(10, 13);
-            this.lblEmailSignal.TabIndex = 25;
-            this.lblEmailSignal.Text = " ";
-            // 
-            // lblPasswordSignal
-            // 
-            this.lblPasswordSignal.AccessibleName = "lblPasswordSignal";
-            this.lblPasswordSignal.AutoSize = true;
-            this.lblPasswordSignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
-            this.lblPasswordSignal.Location = new System.Drawing.Point(569, 214);
-            this.lblPasswordSignal.Name = "lblPasswordSignal";
-            this.lblPasswordSignal.Size = new System.Drawing.Size(10, 13);
-            this.lblPasswordSignal.TabIndex = 26;
-            this.lblPasswordSignal.Text = " ";
             // 
             // loginUC
             // 

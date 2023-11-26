@@ -30,10 +30,9 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSignUp = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbxRole = new System.Windows.Forms.ComboBox();
             this.lblEmailAddressSignal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblContactNumberSignal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbxEmailAddress = new System.Windows.Forms.TextBox();
@@ -48,18 +47,19 @@
             this.txtbxusername = new System.Windows.Forms.TextBox();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.lblusernameSignal = new System.Windows.Forms.Label();
+            this.lblgender = new System.Windows.Forms.Label();
+            this.cmbxGender = new System.Windows.Forms.ComboBox();
+            this.cmbxRole = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textPassword = new System.Windows.Forms.TextBox();
+            this.lblpasswordsignal = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblRecordSignal = new System.Windows.Forms.Label();
             this.gbx = new System.Windows.Forms.GroupBox();
-            this.lblSignUp = new System.Windows.Forms.Label();
-            this.lblgender = new System.Windows.Forms.Label();
-            this.cmbxGender = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textPassword = new System.Windows.Forms.TextBox();
-            this.lblpasswordsignal = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -96,6 +96,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1132, 34);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // lblSignUp
+            // 
+            this.lblSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSignUp.AutoSize = true;
+            this.lblSignUp.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUp.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblSignUp.Location = new System.Drawing.Point(520, 5);
+            this.lblSignUp.Name = "lblSignUp";
+            this.lblSignUp.Size = new System.Drawing.Size(91, 24);
+            this.lblSignUp.TabIndex = 1;
+            this.lblSignUp.Text = "Sign Up";
             // 
             // tableLayoutPanel3
             // 
@@ -144,22 +156,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 269);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // cmbxRole
-            // 
-            this.cmbxRole.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbxRole.FormattingEnabled = true;
-            this.cmbxRole.Items.AddRange(new object[] {
-            "Admin",
-            "Buyer",
-            "Seller"});
-            this.cmbxRole.Location = new System.Drawing.Point(794, 211);
-            this.cmbxRole.Name = "cmbxRole";
-            this.cmbxRole.Size = new System.Drawing.Size(220, 21);
-            this.cmbxRole.Sorted = true;
-            this.cmbxRole.TabIndex = 34;
-            // 
             // lblEmailAddressSignal
             // 
             this.lblEmailAddressSignal.AccessibleName = "lblEmailSignal";
@@ -170,17 +166,6 @@
             this.lblEmailAddressSignal.Size = new System.Drawing.Size(10, 13);
             this.lblEmailAddressSignal.TabIndex = 25;
             this.lblEmailAddressSignal.Text = " ";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.label1.Location = new System.Drawing.Point(657, 211);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 21);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Role";
             // 
             // lblContactNumberSignal
             // 
@@ -219,6 +204,7 @@
             this.txtbxContactNumber.Name = "txtbxContactNumber";
             this.txtbxContactNumber.Size = new System.Drawing.Size(220, 20);
             this.txtbxContactNumber.TabIndex = 8;
+            this.txtbxContactNumber.TextChanged += new System.EventHandler(this.txtbxContactNumber_TextChanged);
             // 
             // Lblontact
             // 
@@ -238,6 +224,7 @@
             this.Firsttxtbx.Name = "Firsttxtbx";
             this.Firsttxtbx.Size = new System.Drawing.Size(220, 20);
             this.Firsttxtbx.TabIndex = 40;
+            this.Firsttxtbx.TextChanged += new System.EventHandler(this.Firsttxtbx_TextChanged);
             // 
             // lblFirstName
             // 
@@ -267,6 +254,7 @@
             this.txtLASTName.Name = "txtLASTName";
             this.txtLASTName.Size = new System.Drawing.Size(220, 20);
             this.txtLASTName.TabIndex = 1;
+            this.txtLASTName.TextChanged += new System.EventHandler(this.txtLASTName_TextChanged);
             // 
             // LastNamelbl
             // 
@@ -296,6 +284,7 @@
             this.txtbxusername.Name = "txtbxusername";
             this.txtbxusername.Size = new System.Drawing.Size(220, 20);
             this.txtbxusername.TabIndex = 2;
+            this.txtbxusername.TextChanged += new System.EventHandler(this.txtbxusername_TextChanged);
             // 
             // usernamelbl
             // 
@@ -318,6 +307,89 @@
             this.lblusernameSignal.Size = new System.Drawing.Size(10, 13);
             this.lblusernameSignal.TabIndex = 20;
             this.lblusernameSignal.Text = " ";
+            // 
+            // lblgender
+            // 
+            this.lblgender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblgender.AutoSize = true;
+            this.lblgender.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.lblgender.Location = new System.Drawing.Point(647, 151);
+            this.lblgender.Name = "lblgender";
+            this.lblgender.Size = new System.Drawing.Size(61, 21);
+            this.lblgender.TabIndex = 42;
+            this.lblgender.Text = "Gender";
+            // 
+            // cmbxGender
+            // 
+            this.cmbxGender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbxGender.FormattingEnabled = true;
+            this.cmbxGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.cmbxGender.Location = new System.Drawing.Point(794, 151);
+            this.cmbxGender.Name = "cmbxGender";
+            this.cmbxGender.Size = new System.Drawing.Size(220, 21);
+            this.cmbxGender.Sorted = true;
+            this.cmbxGender.TabIndex = 43;
+            // 
+            // cmbxRole
+            // 
+            this.cmbxRole.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbxRole.FormattingEnabled = true;
+            this.cmbxRole.Items.AddRange(new object[] {
+            "Admin",
+            "Buyer",
+            "Seller"});
+            this.cmbxRole.Location = new System.Drawing.Point(794, 211);
+            this.cmbxRole.Name = "cmbxRole";
+            this.cmbxRole.Size = new System.Drawing.Size(220, 21);
+            this.cmbxRole.Sorted = true;
+            this.cmbxRole.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.label1.Location = new System.Drawing.Point(657, 211);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 21);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Role";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(188, 211);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Password";
+            // 
+            // textPassword
+            // 
+            this.textPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textPassword.Location = new System.Drawing.Point(342, 212);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(220, 20);
+            this.textPassword.TabIndex = 45;
+            // 
+            // lblpasswordsignal
+            // 
+            this.lblpasswordsignal.AccessibleName = "lblResgSignal";
+            this.lblpasswordsignal.AutoSize = true;
+            this.lblpasswordsignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.lblpasswordsignal.Location = new System.Drawing.Point(342, 240);
+            this.lblpasswordsignal.Name = "lblpasswordsignal";
+            this.lblpasswordsignal.Size = new System.Drawing.Size(10, 13);
+            this.lblpasswordsignal.TabIndex = 46;
+            this.lblpasswordsignal.Text = " ";
             // 
             // tableLayoutPanel4
             // 
@@ -403,74 +475,6 @@
             this.gbx.Size = new System.Drawing.Size(1144, 424);
             this.gbx.TabIndex = 3;
             this.gbx.TabStop = false;
-            // 
-            // lblSignUp
-            // 
-            this.lblSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSignUp.AutoSize = true;
-            this.lblSignUp.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblSignUp.Location = new System.Drawing.Point(520, 5);
-            this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(91, 24);
-            this.lblSignUp.TabIndex = 1;
-            this.lblSignUp.Text = "Sign Up";
-            // 
-            // lblgender
-            // 
-            this.lblgender.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblgender.AutoSize = true;
-            this.lblgender.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.lblgender.Location = new System.Drawing.Point(647, 151);
-            this.lblgender.Name = "lblgender";
-            this.lblgender.Size = new System.Drawing.Size(61, 21);
-            this.lblgender.TabIndex = 42;
-            this.lblgender.Text = "Gender";
-            // 
-            // cmbxGender
-            // 
-            this.cmbxGender.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbxGender.FormattingEnabled = true;
-            this.cmbxGender.Items.AddRange(new object[] {
-            "Female",
-            "Male"});
-            this.cmbxGender.Location = new System.Drawing.Point(794, 151);
-            this.cmbxGender.Name = "cmbxGender";
-            this.cmbxGender.Size = new System.Drawing.Size(220, 21);
-            this.cmbxGender.Sorted = true;
-            this.cmbxGender.TabIndex = 43;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(188, 211);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Password";
-            // 
-            // textPassword
-            // 
-            this.textPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textPassword.Location = new System.Drawing.Point(342, 212);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(220, 20);
-            this.textPassword.TabIndex = 45;
-            // 
-            // lblpasswordsignal
-            // 
-            this.lblpasswordsignal.AccessibleName = "lblResgSignal";
-            this.lblpasswordsignal.AutoSize = true;
-            this.lblpasswordsignal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
-            this.lblpasswordsignal.Location = new System.Drawing.Point(342, 240);
-            this.lblpasswordsignal.Name = "lblpasswordsignal";
-            this.lblpasswordsignal.Size = new System.Drawing.Size(10, 13);
-            this.lblpasswordsignal.TabIndex = 46;
-            this.lblpasswordsignal.Text = " ";
             // 
             // SignupUC
             // 

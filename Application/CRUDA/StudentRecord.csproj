@@ -412,6 +412,7 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ProductViewSeller.cs" />
     <Compile Include="Classes\user.cs" />
+    <Compile Include="Classes\Validation.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

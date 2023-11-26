@@ -80,8 +80,8 @@
             // 
             this.toolStriplblAllRight.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStriplblAllRight.Name = "toolStriplblAllRight";
-            this.toolStriplblAllRight.Size = new System.Drawing.Size(272, 24);
-            this.toolStriplblAllRight.Text = "All right reserved with Student Assessment System";
+            this.toolStriplblAllRight.Size = new System.Drawing.Size(185, 24);
+            this.toolStriplblAllRight.Text = "All right reserved with ShopNexus";
             // 
             // toolStripSeparator1
             // 
