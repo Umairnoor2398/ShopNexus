@@ -30,7 +30,7 @@ namespace CRUDA.Forms
 
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            ProductRview_lbl.Text = "You are Messaging Seller of SellerID= "+ seller+ " right now";
+            ProductRview_lbl.Text = "You are Messaging Reciever of ID= "+ buyer+ " right now";
         }
 
         private void okBtn_Click(object sender, EventArgs e)

@@ -15,14 +15,16 @@ namespace CRUDA.UCs
     public partial class MessagesUC : UserControl
     {
         User u = new User();
-        int id1;
-        int id2;
+        int sender_M;
+        int reciver_M;
         string Role = "";
-        public MessagesUC(int id1, User u)
+        bool check_received = false;
+        public MessagesUC(int id1, User u, bool check_received)
         {
             InitializeComponent();
-            this.id1 = id1;
-            this.u= u;
+            this.sender_M = id1;
+            this.u = u;
+            this.check_received = check_received;
         }
         public MessagesUC(string Role)
         {
@@ -45,17 +47,44 @@ namespace CRUDA.UCs
             try
             {
                 dataGridView1.DataSource = null;
-                var con2 = Configuration.getInstance().getConnection();
-                SqlCommand cmd2 = new SqlCommand($"select * from Communications where sender={id1}", con2);
+                var con = Configuration.getInstance().getConnection();
+                
+                SqlCommand cmd = new SqlCommand($"select * from Communications where sender={sender_M}", con);
            
-                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-                DataTable dt2 = new DataTable();
-                da2.Fill(dt2);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
 
-                dataGridView1.DataSource = dt2;
+                
+                
                 dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+                
 
             }catch (Exception ex) { }
+
+        }
+        private void view3()
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+                var con4 = Configuration.getInstance().getConnection();
+
+                SqlCommand cmd4 = new SqlCommand($"select * from Communications where Receiver={sender_M}", con4);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd4);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+
+
+                dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+
+
+            }
+            catch (Exception ex) { }
 
         }
         private void view2()
@@ -64,14 +93,18 @@ namespace CRUDA.UCs
             {
                 dataGridView1.DataSource = null;
                 var con3 = Configuration.getInstance().getConnection();
+                
                 SqlCommand cmd3 = new SqlCommand($"select * from Communications", con3);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd3);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
                 dataGridView1.DataSource = dt;
+                cmd3.ExecuteNonQuery();
+               
                 dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+                
+                
 
             }
             catch (Exception ex) { }
@@ -91,42 +124,73 @@ namespace CRUDA.UCs
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = dataGridView1.CurrentCell.ColumnIndex;
-            if (index == 5)
-            {
-                Form x = new MessageForm(id1, id2);
-                x.ShowDialog();
-    
+            
+                if (index == 0)
+                {
+                    Form x = new MessageForm(sender_M, reciver_M);
+                    x.ShowDialog();
 
-            }
+
+                }
+
+            
+            
+            
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
+                if (!check_received)
+                {
+                    reciver_M = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                }
+                else {
 
-                id2 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    reciver_M = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
 
+                }
 
-                MessageBox.Show("You have Selected Seller  of Seller ID = " + id2.ToString());
+                MessageBox.Show("You have Selected Receiver  of  ID = " + reciver_M.ToString());
             }
             catch (Exception ex) { }
         }
 
         private void MessagesUC_Load(object sender, EventArgs e)
         {
-            
-            
-            if (Role == "Admin")
+            if (!check_received)
             {
-                refresh();
-                view2();
-               
+
+                if (Role == "Admin")
+                {
+                    refresh();
+                    view2();
+
+                }
+                else
+                {
+                    refresh();
+                    view();
+                    DataBind();
+                }
             }
             else {
-                refresh();
-                view();
-                DataBind();
+
+                if (Role == "Admin")
+                {
+                    refresh();
+                    view2();
+
+                }
+                else
+                {
+                    refresh();
+                    view3();
+                    DataBind();
+
+                }
+
             }
          
         }

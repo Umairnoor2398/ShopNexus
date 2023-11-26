@@ -312,7 +312,7 @@ namespace CRUDA.UCs
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form x = new MessageForm(sellerid,user.UserID);
+            Form x = new MessageForm( user.UserID, sellerid);
             x.ShowDialog();
         }
     }

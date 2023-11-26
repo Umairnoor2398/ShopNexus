@@ -134,6 +134,8 @@ namespace CRUDA
             }
             else if (u.UserRole == "Admin")
             {
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
                 accountlbl.Text = u.UserName;
                 op3.Text = "Communication Details";
                 op3.Visible = true;
@@ -145,8 +147,12 @@ namespace CRUDA
             }
             else if (u.UserRole == "Seller")
             {
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
                 accountlbl.Text = u.UserName;
-                op4.Text = "Messages";
+                op5.Text = "Received Messages";
+                op5.Visible = true;
+                op4.Text = "Send Messages";
                 op4.Visible = true;
                 op3.Text = "Sold Orders";
                 op3.Visible = true;
@@ -159,8 +165,12 @@ namespace CRUDA
             else if (u.UserRole == "Buyer")
             {
                 load_buyer_cart();
+                txtSearch.Visible=true;
+                picSearch.Visible = true;
                 accountlbl.Text = u.UserName;
-                op4.Text = "Messages";
+                op5.Text = "Received Messages";
+                op5.Visible = true;
+                op4.Text = "Send Messages";
                 op4.Visible = true;
                 op3.Text = "Billing";
                 op3.Visible = true;
@@ -190,9 +200,6 @@ namespace CRUDA
         {
 
         }// In Form1
-
-
-        // In Form2
 
 
 
@@ -293,6 +300,8 @@ namespace CRUDA
                 loadc(new AddProduct_UC(u, false));
             }
             else {
+                picSearch.Visible = true;
+                txtSearch.Visible = true;
                 this.pParent.Controls.Clear();
                 loadc(new ViewProductViewer(u,cart_id_buyer));
 
@@ -301,6 +310,9 @@ namespace CRUDA
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
+            this.pParent.Controls.Clear();
+
+            loadc(new ViewProductViewer(u, cart_id_buyer, txtSearch.Text, true));
 
         }
 
@@ -318,13 +330,15 @@ namespace CRUDA
             {
                 this.pParent.Controls.Clear();
 
-                loadc(new MessagesUC(u.UserID,u));
+                loadc(new MessagesUC(u.UserID,u,false));
             }
             else
             {
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
                 this.pParent.Controls.Clear();
 
-                loadc(new MessagesUC(u.UserID,u));
+                loadc(new MessagesUC(u.UserID,u,false));
 
             }
         }
@@ -348,7 +362,10 @@ namespace CRUDA
 
                 loadc(new ViewReviewsUC(u));
             }
-            else {
+            else
+            {
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
                 this.pParent.Controls.Clear();
 
                 loadc(new ViewCartUC(cart_id_buyer,u.UserID));
@@ -377,11 +394,40 @@ namespace CRUDA
             }
             else
             {
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
                 this.pParent.Controls.Clear();
 
                 loadc(new BillingUC(cart_id_buyer, u));
 
             }
+        }
+
+        private void op5_Click(object sender, EventArgs e)
+        { if (u.UserRole == "")// viewer
+                {
+
+                }
+                else if (u.UserRole == "Admin")
+                {
+
+                }
+                else if (u.UserRole == "Seller")
+                {
+                    this.pParent.Controls.Clear();
+
+                    loadc(new MessagesUC(u.UserID, u,true));
+                }
+                else
+                {
+                   txtSearch.Visible = false;
+                         picSearch.Visible = false;
+                         this.pParent.Controls.Clear();
+
+                    loadc(new MessagesUC(u.UserID, u,true));
+
+                }
+            
         }
     }
 }

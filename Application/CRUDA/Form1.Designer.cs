@@ -48,9 +48,8 @@
             this.op4 = new System.Windows.Forms.Label();
             this.op3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picSearch = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,12 +66,14 @@
             this.assessmentComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pParent = new System.Windows.Forms.TableLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.op5 = new System.Windows.Forms.Label();
             this.toolStrip.SuspendLayout();
             this.ptoolStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -169,6 +170,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.32337F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.25307F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.217926F));
+            this.tableLayoutPanel2.Controls.Add(this.op5, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.op2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.op1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.op4, 3, 0);
@@ -243,7 +245,7 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.picSearch, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(1090, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -252,17 +254,17 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(45, 43);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // pictureBox2
+            // picSearch
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::CRUDA.Properties.Resources.icons8_search_25;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            this.picSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picSearch.Image = global::CRUDA.Properties.Resources.icons8_search_25;
+            this.picSearch.Location = new System.Drawing.Point(3, 3);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(39, 37);
+            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picSearch.TabIndex = 0;
+            this.picSearch.TabStop = false;
+            this.picSearch.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // tableLayoutPanel7
             // 
@@ -276,81 +278,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(270, 43);
             this.tableLayoutPanel7.TabIndex = 9;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AcceptsReturn = false;
-            this.txtSearch.AcceptsTab = false;
-            this.txtSearch.AnimationSpeed = 200;
-            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
-            this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtSearch.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtSearch.BorderRadius = 30;
-            this.txtSearch.BorderThickness = 1;
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearch.FillColor = System.Drawing.Color.Snow;
-            this.txtSearch.HideSelection = true;
-            this.txtSearch.IconLeft = null;
-            this.txtSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.IconPadding = 10;
-            this.txtSearch.IconRight = null;
-            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(3, 3);
-            this.txtSearch.MaxLength = 32767;
-            this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtSearch.Modified = false;
-            this.txtSearch.Multiline = false;
-            this.txtSearch.Name = "txtSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.Snow;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnIdleState = stateProperties4;
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Search Product Here";
-            this.txtSearch.ReadOnly = false;
-            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.SelectionLength = 0;
-            this.txtSearch.SelectionStart = 0;
-            this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(264, 37);
-            this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSearch.TextMarginBottom = 0;
-            this.txtSearch.TextMarginLeft = 3;
-            this.txtSearch.TextMarginTop = 0;
-            this.txtSearch.TextPlaceholder = "Search Product Here";
-            this.txtSearch.UseSystemPasswordChar = false;
-            this.txtSearch.WordWrap = true;
             // 
             // tableLayoutPanel3
             // 
@@ -544,6 +471,95 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.AcceptsReturn = false;
+            this.txtSearch.AcceptsTab = false;
+            this.txtSearch.AnimationSpeed = 200;
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
+            this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtSearch.BorderRadius = 30;
+            this.txtSearch.BorderThickness = 1;
+            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearch.FillColor = System.Drawing.Color.Snow;
+            this.txtSearch.HideSelection = true;
+            this.txtSearch.IconLeft = null;
+            this.txtSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.IconPadding = 10;
+            this.txtSearch.IconRight = null;
+            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(3, 3);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtSearch.Modified = false;
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.Snow;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnIdleState = stateProperties4;
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.PlaceholderText = "Search Product Here";
+            this.txtSearch.ReadOnly = false;
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(264, 37);
+            this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.TextMarginBottom = 0;
+            this.txtSearch.TextMarginLeft = 3;
+            this.txtSearch.TextMarginTop = 0;
+            this.txtSearch.TextPlaceholder = "Search Product Here";
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.WordWrap = true;
+            // 
+            // op5
+            // 
+            this.op5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.op5.AutoSize = true;
+            this.op5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.op5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.op5.Location = new System.Drawing.Point(703, 13);
+            this.op5.Name = "op5";
+            this.op5.Size = new System.Drawing.Size(53, 22);
+            this.op5.TabIndex = 10;
+            this.op5.Text = "Sales";
+            this.op5.Visible = false;
+            this.op5.Click += new System.EventHandler(this.op5_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,7 +583,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -616,8 +632,9 @@
         private System.Windows.Forms.Label op4;
         private System.Windows.Forms.Label op3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label op5;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
     }
 }
