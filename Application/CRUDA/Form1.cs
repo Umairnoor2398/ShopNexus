@@ -135,6 +135,8 @@ namespace CRUDA
             else if (u.UserRole == "Admin")
             {
                 accountlbl.Text = u.UserName;
+                op2.Text = "Sold Orders";
+                op2.Visible = true;
                 op1.Text = "View Users";
                 op1.Visible = true;
 
@@ -142,11 +144,12 @@ namespace CRUDA
             else if (u.UserRole == "Seller")
             {
                 accountlbl.Text = u.UserName;
+                op3.Text = "Sold Orders";
+                op3.Visible = true;
                 op2.Text = "View Product Reviews";
                 op2.Visible = true;
                 op1.Text = "Add Product";
                 op1.Visible = true;
-
 
             }
             else if (u.UserRole == "Buyer")
@@ -309,7 +312,9 @@ namespace CRUDA
             }
             else if (u.UserRole == "Admin")
             {
+                this.pParent.Controls.Clear();
 
+                loadc(new NotificationsSaledProductsUC(u));
             }
             else if (u.UserRole == "Seller")
             {
@@ -338,7 +343,9 @@ namespace CRUDA
             }
             else if (u.UserRole == "Seller")
             {
-      
+                this.pParent.Controls.Clear();
+
+                loadc(new NotificationsSaledProductsUC(u));
             }
             else
             {

@@ -18,7 +18,7 @@ namespace CRUDA.UCs
         List<ProductViewSeller> u = new List<ProductViewSeller>();// for admin to view all users login in at that time 
         User user;
         int cart_id = 0;
-        SqlConnection con,con2;
+        
         
         
         public ViewProductViewer(User user,int cart_id)
@@ -83,28 +83,32 @@ namespace CRUDA.UCs
         }
         private void getProductsViewer()
         {
-
-              con2 = Configuration.getInstance().getConnection();
-
-            SqlCommand cmd2 = new SqlCommand($" select p.ProductID, u.UserName, p.Name,p.Description,p.ProductCategory,p.Price,p.Quantity,p.LikesCount,p.ReviewsCount,p.Available  from Users as U join Products as p on p.AddedByUserID=u.UserID ", con2);
-
-
-            SqlDataReader reader = cmd2.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                if ( reader.GetBoolean(reader.GetOrdinal("Available"))) {
-                    ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 1);
-                    u.Add(z);
-                }
-                else {
-                    ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 0);
-                    u.Add(z);
-                }
+                SqlConnection con2 = Configuration.getInstance().getConnection();
 
+                SqlCommand cmd2 = new SqlCommand($" select p.ProductID, u.UserName, p.Name,p.Description,p.ProductCategory,p.Price,p.Quantity,p.LikesCount,p.ReviewsCount,p.Available  from Users as U join Products as p on p.AddedByUserID=u.UserID ", con2);
+
+
+                SqlDataReader reader = cmd2.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetBoolean(reader.GetOrdinal("Available")))
+                    {
+                        ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 1);
+                        u.Add(z);
+                    }
+                    else
+                    {
+                        ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 0);
+                        u.Add(z);
+                    }
+
+                }
+                reader.Close();
+                cmd2.ExecuteNonQuery();
             }
-            reader.Close();
-            cmd2.ExecuteNonQuery();
-            
+            catch (Exception ex) { }
            
     
 
@@ -112,20 +116,83 @@ namespace CRUDA.UCs
         private int countProductsViewer()
         {
             int x = 0;
-             con = Configuration.getInstance().getConnection();
-        
-            SqlCommand cmd = new SqlCommand($"  select count(*)  from Users as U join Products as p on p.AddedByUserID=u.UserID", con);
-
-
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                x = (reader.GetInt32(0));
+                SqlConnection con = Configuration.getInstance().getConnection();
+
+                SqlCommand cmd = new SqlCommand($"  select count(*)  from Users as U join Products as p on p.AddedByUserID=u.UserID", con);
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    x = (reader.GetInt32(0));
+                }
+                reader.Close();
+                cmd.ExecuteNonQuery();
+
             }
-            reader.Close();
-            cmd.ExecuteNonQuery();
-            
-           
+            catch (Exception exp) { }
+
+
+            return x;
+        }
+
+
+
+
+        private void getProductsViewer2()
+        {
+            try
+            {
+                SqlConnection con4 = Configuration.getInstance().getConnection();
+
+                SqlCommand cmd4 = new SqlCommand($" select p.ProductID, u.UserName, p.Name,p.Description,p.ProductCategory,p.Price,p.Quantity,p.LikesCount,p.ReviewsCount,p.Available  from Users as U join Products as p on p.AddedByUserID=u.UserID ", con4);
+
+
+                SqlDataReader reader = cmd4.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetBoolean(reader.GetOrdinal("Available")))
+                    {
+                        ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 1);
+                        u.Add(z);
+                    }
+                    else
+                    {
+                        ProductViewSeller z = new ProductViewSeller(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDecimal(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), 0);
+                        u.Add(z);
+                    }
+
+                }
+                reader.Close();
+                cmd4.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+
+
+
+        }
+        private int countProductsViewer2()
+        {
+            int x = 0;
+            try
+            {
+                SqlConnection con5 = Configuration.getInstance().getConnection();
+
+                SqlCommand cmd5 = new SqlCommand($"  select count(*)  from Users as U join Products as p on p.AddedByUserID=u.UserID", con5);
+
+
+                SqlDataReader reader = cmd5.ExecuteReader();
+                while (reader.Read())
+                {
+                    x = (reader.GetInt32(0));
+                }
+                reader.Close();
+                cmd5.ExecuteNonQuery();
+
+            }
+            catch (Exception exp) { }
 
 
             return x;
@@ -146,14 +213,16 @@ namespace CRUDA.UCs
             try
             {
 
-                int x = countProductsViewer();
-                getProductsViewer();
+             
                 if (user.UserRole == "")
                 {
+                    int x = countProductsViewer();
+                    getProductsViewer();
                     PopulateItemsViewer(x);
                 }
                 else {
-
+                    int x = countProductsViewer2();
+                    getProductsViewer2();
                     PopulateItemsViewer2(x);
                 }
                

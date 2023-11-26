@@ -334,3 +334,4 @@ C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Reflecti
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Reflection.MetadataLoadContext.xml
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Text.Encodings.Web.xml
 C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\bin\Debug\System.Text.Json.xml
+C:\5th Semester\SE\Project\ShopNexus\Application\CRUDA\obj\Debug\CRUDA.UCs.NotificationsSaledProductsUC.resources

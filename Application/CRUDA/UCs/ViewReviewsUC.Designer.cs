@@ -37,14 +37,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.gbx = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gbx = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.gbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbx.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -70,6 +70,7 @@
             this.lblRecordSignal.Size = new System.Drawing.Size(10, 13);
             this.lblRecordSignal.TabIndex = 33;
             this.lblRecordSignal.Text = " ";
+            this.lblRecordSignal.Click += new System.EventHandler(this.lblRecordSignal_Click);
             // 
             // lblSignUp
             // 
@@ -82,6 +83,7 @@
             this.lblSignUp.Size = new System.Drawing.Size(153, 24);
             this.lblSignUp.TabIndex = 1;
             this.lblSignUp.Text = "View Reviews";
+            this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -99,6 +101,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1138, 405);
             this.tableLayoutPanel1.TabIndex = 42;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -112,6 +115,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1132, 41);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -129,6 +133,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.76191F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1132, 30);
             this.tableLayoutPanel4.TabIndex = 2;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -143,17 +148,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.12658F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 316);
             this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // gbx
-            // 
-            this.gbx.Controls.Add(this.tableLayoutPanel1);
-            this.gbx.Controls.Add(this.lblRecordSignal);
-            this.gbx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbx.Location = new System.Drawing.Point(0, 0);
-            this.gbx.Name = "gbx";
-            this.gbx.Size = new System.Drawing.Size(1144, 424);
-            this.gbx.TabIndex = 7;
-            this.gbx.TabStop = false;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // dataGridView1
             // 
@@ -186,6 +181,18 @@
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // gbx
+            // 
+            this.gbx.Controls.Add(this.tableLayoutPanel1);
+            this.gbx.Controls.Add(this.lblRecordSignal);
+            this.gbx.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbx.Location = new System.Drawing.Point(0, 0);
+            this.gbx.Name = "gbx";
+            this.gbx.Size = new System.Drawing.Size(1144, 424);
+            this.gbx.TabIndex = 7;
+            this.gbx.TabStop = false;
+            this.gbx.Enter += new System.EventHandler(this.gbx_Enter);
+            // 
             // ViewReviewsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,9 +206,9 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbx.ResumeLayout(false);
             this.gbx.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

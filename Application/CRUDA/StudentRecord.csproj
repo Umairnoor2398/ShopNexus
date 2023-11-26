@@ -462,12 +462,17 @@
     <Compile Include="UCs\CartItemUC.Designer.cs">
       <DependentUpon>CartItemUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCs\GhostscriptRasterizerSettings.cs" />
     <Compile Include="UCs\loginUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCs\loginUC.Designer.cs">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCs\NotificationsSaledProductsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCs\NotificationsSaledProductsUC.Designer.cs">
+      <DependentUpon>NotificationsSaledProductsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UCs\ViewCartUC.cs">
       <SubType>UserControl</SubType>
@@ -540,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\loginUC.resx">
       <DependentUpon>loginUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCs\NotificationsSaledProductsUC.resx">
+      <DependentUpon>NotificationsSaledProductsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCs\ViewCartUC.resx">
       <DependentUpon>ViewCartUC.cs</DependentUpon>
@@ -653,6 +661,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\icons8-review-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sample.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

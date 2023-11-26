@@ -60,5 +60,40 @@ namespace CRUDA.UCs
         {
 
         }
+
+        private void lblRecordSignal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gbx_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
